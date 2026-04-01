@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>稳界学堂 - 大学生稳定币合规投教平台</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: #f8fafc;
+            color: #0f172a;
+            line-height: 1.5;
+            scroll-behavior: smooth;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .navbar {
+            background-color: #ffffff;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05), 0 1px 2px rgba(0, 0, 0, 0.03);
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        .nav-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #1e3c72, #2b3b6e);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+
+        .hero {
+            padding: 64px 0 48px 0;
+            text-align: center;
+            background: linear-gradient(145deg, #f1f5f9 0%, #ffffff 100%);
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .hero h1 {
+            font-size: 2.8rem;
+            font-weight: 800;
+            background: linear-gradient(125deg, #0b2b44, #1f5e8c);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            margin-bottom: 20px;
+        }
+
+        .hero-description {
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 1.18rem;
+            color: #2c3e50;
+            background: rgba(255,255,255,0.7);
+            padding: 20px 28px;
+            border-radius: 48px;
+            line-height: 1.6;
+        }
+
+        .cards-section {
+            padding: 64px 0 72px;
+        }
+
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+            margin-top: 16px;
+        }
+
+        .card {
+            background: #ffffff;
+            border-radius: 28px;
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.05), 0 4px 8px rgba(0, 0, 0, 0.02);
+            padding: 32px 24px 36px;
+            text-align: center;
+            cursor: pointer;
+            border: 1px solid #eef2f6;
+            transition: all 0.25s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 24px 40px rgba(0, 0, 0, 0.08);
+            border-color: #cbdff2;
+        }
+
+        .card-icon {
+            width: 88px;
+            height: 88px;
+            margin-bottom: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #eef3fc;
+            border-radius: 32px;
+            padding: 12px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .card-icon img {
+            width: 100%;
+            height: auto;
+            max-width: 58px;
+            object-fit: contain;
+        }
+
+        .card h3 {
+            font-size: 1.65rem;
+            font-weight: 700;
+            margin: 12px 0 8px;
+            color: #0c4e6e;
+        }
+
+        .card p {
+            font-size: 0.98rem;
+            color: #334155;
+            line-height: 1.5;
+            max-width: 260px;
+            margin: 8px auto 0;
+        }
+
+        .footer {
+            background-color: #0f172a;
+            color: #e2e8f0;
+            padding: 32px 0 40px;
+            border-top: 1px solid #1e293b;
+        }
+
+        .footer-content {
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .disclaimer {
+            font-weight: 700;
+            background: rgba(255, 80, 80, 0.1);
+            padding: 14px 20px;
+            border-radius: 28px;
+            font-size: 0.88rem;
+            color: #facc15;
+            line-height: 1.5;
+            border-left: 3px solid #f97316;
+        }
+
+        .copyright {
+            margin-top: 24px;
+            font-size: 0.8rem;
+            opacity: 0.7;
+        }
+
+        @media (max-width: 880px) {
+            .cards-grid {
+                grid-template-columns: 1fr;
+                gap: 28px;
+                max-width: 500px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            .hero-description {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header class="navbar">
+    <div class="container nav-container">
+        <div class="logo">稳界学堂</div>
+        <div style="font-size: 0.85rem; color: #4a627a;">📘 合规 · 认知 · 未来</div>
+    </div>
+</header>
+
+<main>
+    <section class="hero">
+        <div class="container">
+            <h1>稳界学堂 | 理性拥抱数字未来</h1>
+            <div class="hero-description">
+                “我们是一个专注于国内大学生的教育项目，旨在安全、合规的框架下，通过系统课程与模拟实践，
+                帮你穿透炒作迷雾，理解稳定币的技术本质、全球监管与真实应用，构建面向未来的金融素养。”
+            </div>
+        </div>
+    </section>
+
+    <section class="cards-section">
+        <div class="container">
+            <div class="cards-grid">
+                <!-- 卡片1：全球生态瞭望台（点击跳转外部链接） -->
+                <div class="card" data-url="https://vm-binance.com">
+                    <div class="card-icon">
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='45' fill='%23d9eafb'/%3E%3Cpath fill='%233b82c4' d='M58,32 L42,32 L38,48 L62,48 L58,32Z' /%3E%3Crect x='45' y='48' width='10' height='18' fill='%232c5a7a' /%3E%3Ccircle cx='38' cy='38' r='4' fill='%23f4a261'/%3E%3Ccircle cx='62' cy='38' r='4' fill='%23f4a261'/%3E%3Cpath fill='%23e9c46a' d='M48,68 L52,68 L54,74 L46,74 Z' /%3E%3C/svg%3E"
+                             alt="望远镜图标">
+                    </div>
+                    <h3>全球生态瞭望台</h3>
+                    <p>链接至权威市场数据网站，仅供学习观察</p>
+                </div>
+                <!-- 卡片2：风险认知实验室（打开独立子页面） -->
+                <div class="card" data-card="sandbox">
+                    <div class="card-icon">
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='80' height='60' x='10' y='20' fill='%23e7f0fd' rx='12'/%3E%3Ccircle cx='38' cy='48' r='9' fill='%233f8ec9'/%3E%3Ccircle cx='62' cy='48' r='9' fill='%233f8ec9'/%3E%3Crect x='30' y='68' width='40' height='8' fill='%23355a7a' rx='4'/%3E%3Cpath fill='%23f4a261' d='M45,35 L55,35 L55,42 L45,42 Z' /%3E%3C/svg%3E"
+                             alt="沙盘图标">
+                    </div>
+                    <h3>风险认知实验室</h3>
+                    <p>零成本模拟稳定币操作，直观体验机制与风险</p>
+                </div>
+                <!-- 卡片3：合规前沿启示录（打开独立子页面） -->
+                <div class="card" data-card="academy">
+                    <div class="card-icon">
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath fill='%23ffe6cc' d='M20,45 L50,28 L80,45 L50,62 L20,45Z' /%3E%3Crect x='42' y='48' width='16' height='30' fill='%234b7b9d' /%3E%3Cpath fill='%23f4d03f' d='M48,32 L52,32 L52,38 L48,38 Z' /%3E%3Ccircle cx='50' cy='68' r='5' fill='%23e67e22' /%3E%3C/svg%3E"
+                             alt="书籍图标">
+                    </div>
+                    <h3>合规前沿启示录</h3>
+                    <p>体系化课程，从原理到监管，从职场到趋势</p>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="footer">
+    <div class="container footer-content">
+        <div class="disclaimer">
+            ⚠️ <strong>免责声明：</strong>本网站纯属教育目的。任何提及的加密资产相关活动，在中华人民共和国境内均属非法金融活动。
+            我们坚决反对并警示所有用户远离任何形式的非法交易与投资行为。
+        </div>
+        <div class="copyright">
+            © 2025 稳界学堂 · 大学生合规投教公益项目 | 面向理性思辨与数字素养
+        </div>
+    </div>
+</footer>
+
+<script>
+    // 生成独立子页面的函数（仅用于 sandbox 和 academy）
+    function getSubPageContent(type) {
+        const subStyle = `
+            <style>
+                * { margin:0; padding:0; box-sizing:border-box; }
+                body {
+                    font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+                    background: #f4f7fc;
+                    color: #0f172a;
+                    padding: 30px 20px;
+                    line-height: 1.5;
+                }
+                .page {
+                    max-width: 1000px;
+                    margin: 0 auto;
+                    background: white;
+                    border-radius: 32px;
+                    padding: 36px 40px;
+                    box-shadow: 0 20px 35px -12px rgba(0,0,0,0.1);
+                }
+                h1 {
+                    font-size: 2rem;
+                    margin-bottom: 16px;
+                    color: #155e7e;
+                    border-left: 5px solid #f97316;
+                    padding-left: 20px;
+                }
+                h2 {
+                    font-size: 1.5rem;
+                    margin: 28px 0 12px;
+                    color: #2c3e66;
+                }
+                .card-block {
+                    background: #f9fafc;
+                    padding: 20px;
+                    border-radius: 24px;
+                    margin: 24px 0;
+                    border: 1px solid #e2edf7;
+                }
+                .btn-close {
+                    display: inline-block;
+                    margin-top: 28px;
+                    background: #1e293b;
+                    color: white;
+                    padding: 10px 28px;
+                    border-radius: 40px;
+                    text-decoration: none;
+                    font-weight: 500;
+                    cursor: pointer;
+                    border: none;
+                    font-size: 0.9rem;
+                }
+                .btn-close:hover { background: #334155; }
+                .warning {
+                    background: #fff1e5;
+                    border-left: 4px solid #f97316;
+                    padding: 16px 20px;
+                    border-radius: 20px;
+                    margin: 28px 0;
+                    font-size: 0.9rem;
+                }
+                .data-link { color: #2c6e9e; text-decoration: underline; }
+                .sim-box {
+                    background: #eef2ff;
+                    border-radius: 28px;
+                    padding: 24px;
+                    text-align: center;
+                }
+                .sim-button {
+                    background: #f97316;
+                    border: none;
+                    padding: 10px 22px;
+                    border-radius: 50px;
+                    font-weight: bold;
+                    margin-top: 18px;
+                    cursor: pointer;
+                    color: white;
+                    margin-right: 12px;
+                }
+                .sim-button.reset { background: #4b6e8a; }
+                .price {
+                    font-size: 2rem;
+                    font-weight: 800;
+                    margin: 15px 0;
+                }
+                .course-list {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 14px;
+                }
+                .course-item {
+                    background: white;
+                    padding: 16px 20px;
+                    border-radius: 20px;
+                    border: 1px solid #e0edf5;
+                }
+                .footer-note {
+                    margin-top: 32px;
+                    font-size: 0.75rem;
+                    text-align: center;
+                    color: #4b5563;
+                }
+                @media (max-width: 600px) {
+                    .page { padding: 20px; }
+                    h1 { font-size: 1.7rem; }
+                }
+            </style>
+        `;
+
+        if (type === 'sandbox') {
+            return `<!DOCTYPE html>
+            <html lang="zh-CN">
+            <head><meta charset="UTF-8"><title>稳界学堂 · 风险认知实验室</title>${subStyle}
+            <script>
+                let currentPrice = 1.00;
+                function triggerRisk() {
+                    let volatility = (Math.random() * 0.28) - 0.08;
+                    let newPrice = 1 + volatility;
+                    newPrice = Math.max(0.82, Math.min(1.22, newPrice));
+                    currentPrice = parseFloat(newPrice.toFixed(4));
+                    document.getElementById('priceVal').innerText = currentPrice.toFixed(4);
+                    const msgDiv = document.getElementById('riskMsg');
+                    if (currentPrice < 0.95 || currentPrice > 1.05) {
+                        msgDiv.innerText = '⚠️ 脱锚警示！稳定币偏离锚定价值，机制风险暴露，用户可能面临巨大损失。';
+                        msgDiv.style.color = '#b91c1c';
+                    } else {
+                        msgDiv.innerText = '✓ 当前价格相对平稳，但仍需注意黑天鹅事件与监管不确定性。';
+                        msgDiv.style.color = '#2b6e3c';
+                    }
+                }
+                function resetPrice() {
+                    currentPrice = 1.00;
+                    document.getElementById('priceVal').innerText = '1.0000';
+                    document.getElementById('riskMsg').innerHTML = '💡 锚定稳定状态，但市场恐慌或流动性危机可能瞬间打破平衡。';
+                    document.getElementById('riskMsg').style.color = '#3b5e7a';
+                }
+            </script>
+            </head>
+            <body>
+            <div class="page">
+                <h1>🎮 风险认知实验室 · 模拟沙盘</h1>
+                <p>零成本模拟稳定币（如USDT/USDC）挂钩法币的机制，体验市场冲击下的脱锚风险。</p>
+                <div class="sim-box">
+                    <h2>模拟稳定币锚定价格：1 USD</h2>
+                    <div class="price">💵 当前模拟价格: <span id="priceVal">1.0000</span> USD</div>
+                    <div id="riskMsg" style="font-weight:500; margin:12px 0;">💡 锚定稳定状态，但市场恐慌可能打破平衡。</div>
+                    <button class="sim-button" onclick="triggerRisk()">⚡ 模拟市场冲击 (恐慌/监管/脱锚)</button>
+                    <button class="sim-button reset" onclick="resetPrice()">⟳ 重置锚定</button>
+                    <div class="warning" style="margin-top: 24px;">
+                        🔍 实验解析：稳定币依靠储备资产、算法或套利机制维持价值，但历史事件证明机制存在脆弱性。在中国境内，任何稳定币交易活动均为非法，本模拟器仅为认知教育。
+                    </div>
+                </div>
+                <div class="card-block">
+                    <h2>🧠 风险机制课堂</h2>
+                    <p>▪ 储备不足风险：发行方无法兑付美元资产导致挤兑。<br>
+                    ▪ 算法-死亡螺旋：市场恐慌引发抛售，价格崩溃。<br>
+                    ▪ 监管干预：全球监管收紧可能影响流动性及承兑。<br>
+                    ▪ 合规警示：境内禁止参与任何加密货币交易及投资。</p>
+                </div>
+                <button class="btn-close" onclick="window.close()">关闭模拟器</button>
+                <div class="footer-note">稳界学堂 · 教育实验 · 无任何真实资金交易</div>
+            </div>
+            </body>
+            </html>`;
+        }
+        
+        if (type === 'academy') {
+            return `<!DOCTYPE html>
+            <html lang="zh-CN">
+            <head><meta charset="UTF-8"><title>稳界学堂 · 合规前沿启示录</title>${subStyle}</head>
+            <body>
+            <div class="page">
+                <h1>📚 合规前沿启示录 · 体系化课程库</h1>
+                <p>从技术原理到全球监管，从职业素养到未来趋势，打造大学生合规金融知识图谱。</p>
+                <div class="course-list">
+                    <div class="course-item"><strong>🔹 课程模块一：稳定币技术底层与算法机制</strong><br> 区块链基础、稳定币分类（法币抵押、加密抵押、算法）、智能合约原理。</div>
+                    <div class="course-item"><strong>🔹 课程模块二：全球稳定币监管框架全景</strong><br> 美国、欧盟MiCA法案、香港监管沙盒及中国央行数字货币对比，反洗钱合规要点。</div>
+                    <div class="course-item"><strong>🔹 课程模块三：金融职场素养与数字伦理</strong><br> 数字经济职业发展、合规风控岗位认知、数字资产法律红线与道德决策。</div>
+                    <div class="course-item"><strong>🔹 课程模块四：从宏观趋势到现实应用</strong><br> 跨境支付、央行数字货币(CBDC)与稳定币竞合关系，未来金融基础设施展望。</div>
+                </div>
+                <div class="warning">
+                    🎓 所有课程内容严格遵守中国法律法规，重点强调“禁止参与非法加密金融活动”，帮助大学生建立合法、理性的投资观与科技观。
+                </div>
+                <div class="card-block" style="background:#eef2ff;">
+                    <h3>🎯 即将推出：互动测验 & 合规认证</h3>
+                    <p>完成体系课程后可参与测试，获取稳界学堂“数字金融素养认证”（公益性教育证明）。</p>
+                </div>
+                <button class="btn-close" onclick="window.close()">关闭课程页面</button>
+                <div class="footer-note">合规先行 · 教育为本 · 稳界学堂</div>
+            </div>
+            </body>
+            </html>`;
+        }
+        return '<html><body>页面不存在</body></html>';
+    }
+
+    // 为卡片绑定点击事件
+    document.querySelectorAll('.card').forEach(card => {
+        card.addEventListener('click', (e) => {
+            // 优先判断是否有 data-url 属性（用于外部链接）
+            const externalUrl = card.getAttribute('data-url');
+            if (externalUrl) {
+                // 使用创建 a 标签模拟点击的方式，更可靠
+                const a = document.createElement('a');
+                a.href = externalUrl;
+                a.target = '_blank';
+                a.rel = 'noopener noreferrer';
+                a.click();
+                return;
+            }
+            // 否则处理内部子页面（sandbox / academy）
+            const type = card.getAttribute('data-card');
+            if (!type) return;
+            const subHtml = getSubPageContent(type);
+            const newWin = window.open('', '_blank');
+            if (!newWin) {
+                alert("请允许浏览器弹出窗口，以便打开教育子页面进行学习。");
+                return;
+            }
+            newWin.document.write(subHtml);
+            newWin.document.close();
+        });
+    });
+</script>
+</body>
+</html>
